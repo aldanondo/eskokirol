@@ -258,6 +258,19 @@ Route::resource('excel','ExcelController');
 
 
 
+	//// PARTE DE FELIX BLANCO 
+
+
+	Route::group(['prefix' => 'PlanEvaluacion'], function () {
+		
+		Route::resource('Periodo_Academico', 'PeriodoAcademicoController');
+		Route::resource('Salones', 'SalonesController');
+		Route::resource('Plan_de_Evaluacion', 'PlanEvaluacionController');
+		Route::resource('Proyectos', 'ProyectosController');
+		Route::resource('Lapsos', 'LapsosController');
+		Route::resource('Horarios', 'HorariosController');
+	
+	});
 
 
 
