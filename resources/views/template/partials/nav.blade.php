@@ -54,8 +54,13 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Evaluación <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">S/F</a></li>
-           
+            <li><a href="{{ route('PlanEvaluacion.Plan_de_Evaluacion.index') }}">Plan de Evaluación</a></li>
+            <li><a href="{{ route('PlanEvaluacion.Periodo_Academico.index') }}">Periodo Academico</a></li>
+            <li><a href="{{ route('PlanEvaluacion.Proyectos.index') }}">Proyecto</a></li>
+            <li><a href="{{ route('PlanEvaluacion.Salones.index') }}">Salones</a></li>
+            <li><a href="{{ route('PlanEvaluacion.Lapsos.index') }}">Lapsos</a></li>
+            <li><a href="{{ route('PlanEvaluacion.Horarios.index') }}">Horarios</a></li>
+      
           </ul>
         </li>
          <li class="dropdown">
