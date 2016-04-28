@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\Lapso;
+
 class LapsosController extends Controller
 {
     /**
@@ -16,7 +18,7 @@ class LapsosController extends Controller
     public function index()
     {
         //
-        return view('evaluacion.lapsos.create');
+        return view('evaluacion.lapsos.index');
     }
 
     /**
@@ -26,7 +28,8 @@ class LapsosController extends Controller
      */
     public function create()
     {
-        //
+        $laps = Lapso::orderBy('id', 'ASC')->paginate(5);
+        return view('evaluacion.lapsos.create')->with('laps', $laps);;
     }
 
     /**
@@ -37,7 +40,8 @@ class LapsosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $lapso= new Lapso($request->all());
+        $lapso->save();
     }
 
     /**

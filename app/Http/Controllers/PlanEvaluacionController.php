@@ -16,7 +16,7 @@ class PlanEvaluacionController extends Controller
     public function index()
     {
         //
-        return view('evaluacion.plan_evaluacion.create');
+        return view('evaluacion.plan_evaluacion.index');
     }
 
     /**
@@ -27,6 +27,7 @@ class PlanEvaluacionController extends Controller
     public function create()
     {
         //
+        return view('evaluacion.plan_evaluacion.create');
     }
 
     /**
