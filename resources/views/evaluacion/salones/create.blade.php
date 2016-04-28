@@ -1,9 +1,11 @@
 @extends('template.main')
 
-@section('title','Salones')
+@section('title','Agregar Salones')
 
 @section('content')
+	
 
+{!! Form::open(array('route' => 'PlanEvaluacion.Salones.store', 'method' => 'POST')) !!}
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12">
@@ -13,28 +15,28 @@
 	<div class="row">
 		<div class="col-md-6">
 			<div class="form-group">
-				<label>Nombre Salones</label>
-				<input type="text" class="form-control">
+				{!! Form::label('nombre','Nombre del Salón') !!}
+				{!! Form::text('nombre',null, ['class' => 'form-control', 'placeholder' => 'Ingrese Nombre del Salón', 'required'] ) !!}
 			</div>
 		</div>
 		<div class="col-md-6">
 			<div class="form-group">
-				<label>Cantidad Salones</label>
-				<input type="text" class="form-control">
+				{!! Form::label('capacidad','Capacidad') !!}
+				{!! Form::text('capacidad',null, ['class' => 'form-control', 'placeholder' => 'Ingrese la capacidad del Salón', 'required'] ) !!}
 			</div>
 		</div>		
 	</div>
 	<div class="row">
 		<div class="col-md-6">
 			<div class="form-group">
-				<label>Pasillo</label>
-				<textarea class="form-control">Escribir</textarea>
+				{!! Form::label('pasillo','Pasillo del Salón') !!}
+				{!! Form::text('pasillo',null, ['class' => 'form-control', 'placeholder' => 'Ingrese el pasillo del Salón', 'required'] ) !!}
 			</div>
 		</div>
 		<div class="col-md-6">
 			<div class="form-group">
-				<label>Descripción</label>
-				<textarea class="form-control">Escribir</textarea>
+				{!! Form::label('descripcion','Descripción del Salón') !!}
+				{!! Form::textarea('descripcion',null, ['class' => 'form-control', 'placeholder' => 'Ingrese descripción del Salón', 'required'] ) !!}
 			</div>
 		</div>		
 	</div>	
@@ -44,52 +46,7 @@
 		</div>
 	</div>
 
-	<div class="row">
-		<div class="col-md-12">
-			<h2><span class="glyphicon glyphicon-list-alt"></span> Lista de Salones</h2>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-md-12">
-			<table class="table table-hover">
-				<tr>
-					<td><b>Nombre de Salones</b></td>
-				
-					<td><b>Capacidad</b></td>
-				
-					<td><b>Pasillo</b></td>
-				
-					<td><b>Descripción</b></td>
-				
-					<td><b>Operaciones</b></td>
-				</tr>
-				<tr>
-					<td>Simón Bolivar</td>
-				
-					<td>20</td>
-				
-					<td>Canaima</td>
-				
-					<td>Este salon esta al lado de tal.</td>
-				
-					<td><button class="btn btn-danger btn-lg"> <span class="glyphicon glyphicon-remove"></span> </button> <button class="btn btn-info btn-lg"><span class="glyphicon glyphicon-refresh"></span></button></td>
-				</tr>	
-				<tr>
-					<td>Simón Bolivar</td>
-				
-					<td>20</td>
-				
-					<td>Canaima</td>
-				
-					<td>Este salon esta al lado de tal.</td>
-				
-					<td><button class="btn btn-danger btn-lg"> <span class="glyphicon glyphicon-remove"></span> </button> <button class="btn btn-info btn-lg"><span class="glyphicon glyphicon-refresh"></span></button></td>
-				</tr>								
-			</table>
-		</div>
-	</div>
-
 </div>
+{!! Form::close() !!}
 
 @endsection

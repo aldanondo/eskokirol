@@ -16,7 +16,7 @@
 			<th>Operación</th>
 		</thead>
 		<tbody>
-			@foreach ($periodo_academicos as $periodo_academico)
+			@foreach($periodo_academicos as $periodo_academico)
 				<tr> 
 					<td>{{ $periodo_academico->ano_academico }}</td>
 					<td>{{ $periodo_academico->inicio_periodo }}</td>

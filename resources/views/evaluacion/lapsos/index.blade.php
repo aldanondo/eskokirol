@@ -31,22 +31,23 @@
 			<table class="table table-hover">
 				<tr>
 					<td><b>Lapsos Academico</b></td>
+					<td><b>Operaciones</b></td>
 				</tr>
+				<tbody>
+					@foreach ($lapsos as $lapso)
+						<tr> 
+							<td>{{ $lapso->lapso }}</td>
+	
+						    <td>
+						    
+						    	<a href="{{ route('PlanEvaluacion.Lapsos.edit', $lapso->id ) }}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench" aria-hidden= "true"></span></a>
 
-			@foreach ($laps as $lapso)
-				<tr> 
-					<td>{{ $lapso->lapso }}</td>
-					<td>{{ $lapso->lapso }}</td>
-					<td>{{ $lapso->lapso }}</td>
-				    <td>
-
-				    	<a href="{{ route('PlanEvaluacion.Periodo_Academico.edit', $lapso->id ) }}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench" aria-hidden= "true"></span></a>
-
-                    	 <a href="{{ route('PlanEvaluacion.Periodo_Academico.destroy', $lapso->id ) }}" class="btn btn-danger" onclick="return confirm('Seguro que desea eliminar la institucion?')"><span class="glyphicon glyphicon-remove-circle" aria-hidden= "true"></span> </a>
-
-			        </td>
-				</tr>
-			@endforeach											
+		                    	 <a href="{{ route('PlanEvaluacion.Lapsos.destroy', $lapso->id ) }}" class="btn btn-danger" onclick="return confirm('Seguro que desea eliminar la institucion?')"><span class="glyphicon glyphicon-remove-circle" aria-hidden= "true"></span> </a>
+							
+					        </td>
+						</tr>
+					@endforeach
+				</tbody>										
 			</table>
 		</div>
 	</div>

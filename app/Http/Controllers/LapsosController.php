@@ -17,8 +17,9 @@ class LapsosController extends Controller
      */
     public function index()
     {
-        //
-        return view('evaluacion.lapsos.index');
+        $lapsos = Lapso::orderBy('id', 'ASC')->paginate(5);
+        return view('evaluacion.lapsos.index')->with('lapsos', $lapsos);
+
     }
 
     /**
@@ -28,8 +29,7 @@ class LapsosController extends Controller
      */
     public function create()
     {
-        $laps = Lapso::orderBy('id', 'ASC')->paginate(5);
-        return view('evaluacion.lapsos.create')->with('laps', $laps);;
+        return view('evaluacion.lapsos.create');
     }
 
     /**
@@ -63,7 +63,8 @@ class LapsosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $Lapsos = Lapso::find($id);
+        return view('evaluacion.lapsos.edit')->with('Lapsos',$Lapsos);
     }
 
     /**
@@ -75,7 +76,11 @@ class LapsosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $lapsos = Lapso::find($id);
+        $lapsos->fill($request->all());
+        $lapsos->save();
+        #Flash::success("Se ha editado ".$lapsos->lapso );
+        #return redirect()->route('config.actividades.index');      
     }
 
     /**

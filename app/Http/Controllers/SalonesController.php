@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\Salon;
+
 class SalonesController extends Controller
 {
     /**
@@ -15,8 +17,8 @@ class SalonesController extends Controller
      */
     public function index()
     {
-        //
-        return view('evaluacion.salones.create');
+        $salones = Salon::orderBy('id', 'ASC')->paginate(5);
+        return view('evaluacion.salones.index')->with('salones', $salones);
     }
 
     /**
@@ -26,7 +28,7 @@ class SalonesController extends Controller
      */
     public function create()
     {
-        //
+        return view('evaluacion.salones.create');
     }
 
     /**
@@ -37,7 +39,8 @@ class SalonesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $Salones=new Salon($request->all()); 
+        $Salones->save();    
     }
 
     /**
@@ -59,7 +62,8 @@ class SalonesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $salones = Salon::find($id);
+        return view('evaluacion.salones.edit')->with('salones',$salones);        
     }
 
     /**
@@ -71,7 +75,9 @@ class SalonesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $salones = Salon::find($id);
+        $salones->fill($request->all());
+        $salones->save();
     }
 
     /**
