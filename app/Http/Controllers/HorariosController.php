@@ -16,7 +16,7 @@ class HorariosController extends Controller
     public function index()
     {
         //
-        return view('evaluacion.horarios.create');
+        return view('evaluacion.horarios.index');
     }
 
     /**
@@ -26,7 +26,7 @@ class HorariosController extends Controller
      */
     public function create()
     {
-        //
+       return view('evaluacion.horarios.create');
     }
 
     /**

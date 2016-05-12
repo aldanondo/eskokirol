@@ -16,7 +16,7 @@ class ProyectosController extends Controller
     public function index()
     {
         //
-        return view('evaluacion.proyecto.create');
+        return view('evaluacion.proyecto.index');
     }
 
     /**
@@ -26,7 +26,7 @@ class ProyectosController extends Controller
      */
     public function create()
     {
-        //
+        return view('evaluacion.proyecto.create');
     }
 
     /**

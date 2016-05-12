@@ -52,6 +52,9 @@
 				@endforeach	
 
 			</table>
+			<div align="center"> 
+				{{ $salones->render() }}
+			</div>			
 		</div>
 	</div>
 

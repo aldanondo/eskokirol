@@ -33,5 +33,8 @@
 
 		</tbody>
 	</table>
+	<div align="center"> 
+		{{ $periodo_academicos->render() }}
+	</div>
 
 @endsection

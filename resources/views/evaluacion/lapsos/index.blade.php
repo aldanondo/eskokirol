@@ -49,6 +49,9 @@
 					@endforeach
 				</tbody>										
 			</table>
+			<div align="center">
+				{{ $lapsos->render() }}
+			</div>			
 		</div>
 	</div>
 
